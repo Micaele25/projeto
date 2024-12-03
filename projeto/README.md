@@ -164,7 +164,7 @@ Pré-requisitos
     -Instalar dependências
 **Passos**    
 1. Clone este repositório:
-   git clone https://github.com/seu-usuario/nome-do-repositorio.git
+  (https://github.com/Micaele25/projeto.git)
 
 2. Crie e ative um ambiente virtual:
 WINDOWS:
