@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='styles.css') }}">
+</head>
+<body>
+
+<header>
+    <h1>Gerenciamento de Registros</h1>
+</header>
+
+<div class="container">
+    <!-- Alunos -->
+    <div class="menu-item">
+<h2>Alunos</h2>
+        <div id="aluno-menu" class="submenu">
+            <ul>
+                <li><a href="/adicionar/aluno" class="btn-adicionar">Adicionar Novo Aluno</a></li>
+                <li><a href="/listar/alunos" class="btn-listar">Listar Alunos</a></li>
+                <li><a href="/deletar/aluno" class="btn-excluir">Deletar Aluno</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Cursos -->
+    <div class="menu-item">
+        <h2>Cursos</h2>
+        <div id="curso-menu" class="submenu">
+            <ul>
+                <li><a href="/adicionar/curso" class="btn-adicionar">Adicionar Novo Curso</a></li>
+                <li><a href="/listar/cursos" class="btn-listar">Listar Cursos</a></li>
+                <li><a href="/deletar/curso" class="btn-excluir">Deletar Curso</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Professores -->
+    <div class="menu-item">
+        <h2>Professores</h2>
+        <div id="professor-menu" class="submenu">
+            <ul>
+                <li><a href="/adicionar/professor" class="btn-adicionar">Adicionar Novo Professor</a></li>
+                <li><a href="/listar/professores" class="btn-listar">Listar Professores</a></li>
+                <li><a href="/deletar/professor" class="btn-excluir">Deletar Professor</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Script para alternar o menu -->
+<script>
+    function toggleMenu(menuId) {
+        var menu = document.getElementById(menuId);
+        if (menu.style.display === "block") {
+            menu.style.display = "none";
+        } else {
+            menu.style.display = "block";
+        }
+    }
+</script>
+
+</body>
+</html>

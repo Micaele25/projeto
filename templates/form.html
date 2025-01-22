@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if id %}Editar{% else %}Adicionar{% endif %} Registro</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='styles.css') }}">
+</head>
+<body>
+
+<header>
+    <h1>{% if id %}Editar{% else %}Adicionar{% endif %} Registro</h1>
+</header>
+
+<div class="container">
+    <form action="/{{ tipo }}/{{ id if id else '' }}" method="post">
+        {% if id %}
+        <input type="hidden" name="_method" value="PUT">
+        {% endif %}
+
+        <label for="id">ID:</label>
+        <input type="number" id="id" name="id" value="{{ id }}" required {% if id %}readonly{% endif %}>
+
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" value="{{ nome }}" required>
+
+        <label for="extra">Idade/Descrição/Especialidade:</label>
+        <input type="text" id="extra" name="extra" value="{{ extra }}" required>
+
+        <button type="submit">{% if id %}Salvar Alterações{% else %}Salvar{% endif %}</button>
+    </form>
+
+    <a href="/" class="btn-voltar">Voltar</a>
+</div>
+
+</body>
+</html>
